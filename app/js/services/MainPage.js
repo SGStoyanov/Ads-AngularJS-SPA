@@ -5,7 +5,7 @@ adsApp.factory('mainData', function($http) {
         getAllAds: function(success) {
             $http({
                 method: 'GET',
-                url: 'http://softuni-ads.azurewebsites.net/api/ads?PageSize=10&StarPage=1'
+                url: 'http://localhost:1337/api/ads?PageSize=8&StartPage=1'
             })
                 .success(function(data, status, headers, config) {
                     success(data);

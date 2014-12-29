@@ -2,32 +2,59 @@ main li {
     list-style-type: none;
     color: black;
     margin: 4%;
-    padding: 4%;
-    border: 1px solid #add8e6;
+    /*padding: 4%;*/
+    /*border: 1px solid #add8e6;*/
 }
 
-    main .adsLiHeader .titleDiv {
-        font-weight: bolder;
-        font-size: 1.4em;
-        color: black;
+    main li .container {
+        background: #37A7E8;
+        border-radius: 1%;
     }
 
-        .titleDiv {
-            padding: 0;
-            margin: 0;
-        }
-
-    main .adsLiMain .photoDiv {
-        margin-right: 5%;
+    main .adsLiHeader {
+        margin-bottom: 7%;
     }
 
-        .photo, .textDiv {
-            border: 2px dotted #add8e6;
+        main .adsLiHeader .titleDiv {
+            font-weight: bolder;
+            font-size: 1.4em;
+            color: black;
         }
-        .photo {
-            max-width: 150px;
-            max-height: 120px;
-        }
-        .textDiv {
-            font-size: 0.9em;
-        }
+
+            .titleDiv {
+                padding: 0;
+                margin: 0;
+            }
+
+            .photo, .textDiv, .adsTextRight {
+                border: 2px dotted #add8e6;
+            }
+
+            /*.photoDiv {*/
+                /*background: #a6d8f4;*/
+            /*}*/
+
+                .photo {
+                    max-width: 150px;
+                    max-height: 120px;
+                }
+            .textDiv {
+                font-size: 0.9em;
+            }
+
+            .adsTextRight {
+                margin-left: 3.2%
+                margin-right: 0;
+                margin-top: 4%;
+                margin-bottom: 0;
+                padding: 0;
+                padding-left: 2%;
+                background: #a6d8f4;
+            }
+
+            .adsLabelTextRight {
+                margin-top: 4%;
+                margin-bottom: 0;
+                margin-left: 0;
+                padding: 0;
+            }
