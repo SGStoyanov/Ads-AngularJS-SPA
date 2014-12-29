@@ -34,8 +34,14 @@
                 </li>
             </ul>
         </div>
-        <div class="col-lg-3">
-            Filters
+        <div class="col-lg-3 sideFilters">
+            <h3 class="titleCategories">Categories</h3>
+            <ul>
+                <li ng-repeat="category in categories">{{category.name}}</li>
+            </ul>
+        </div>
+        <div class="col-lg-3 sideFilters">
+            Towns
         </div>
     </div>
 </div>
