@@ -1,5 +1,16 @@
 .sideFilters {
     border: 1px solid #add8e6;
+    border-radius: 2%;
+    box-shadow: 2px 2px 2px black;
     margin-top: 2.9%;
     background: #37A7E8;
+    color: black;
 }
+
+    .titleFilters {
+        color: black;
+        font-weight: bolder;
+        text-align: center;
+        border-bottom: 1px solid black;
+        padding: 7%;
+    }

@@ -6,5 +6,8 @@ adsApp.controller('adsMainController', function($scope, mainData) {
     });
     mainData.getAllCategories(function(resp) {
         $scope.categories = resp;
-    })
+    });
+    mainData.getAllTowns(function(resp) {
+        $scope.towns = resp;
+    });
 });

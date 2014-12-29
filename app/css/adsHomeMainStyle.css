@@ -11,6 +11,7 @@ main li {
     main li .container {
         background: #37A7E8;
         border-radius: 2%;
+        box-shadow: 2px 2px 2px black;
     }
 
     main .adsLiHeader {

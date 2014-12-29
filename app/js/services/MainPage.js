@@ -17,7 +17,19 @@ adsApp.factory('mainData', function($http) {
         getAllCategories: function(success) {
             $http({
                 method: 'GET',
-                url: 'http://softuni-ads.azurewebsites.net/api/categories'
+                url: 'http://localhost:1337/api/categories'
+            })
+                .success(function(data, status, headers, config) {
+                    success(data);
+                })
+                .error(function(data, status, headers, config) {
+                    $log.warn(data);
+                })
+        },
+        getAllTowns: function(success) {
+            $http({
+                method: 'GET',
+                url: 'http://localhost:1337/api/towns'
             })
                 .success(function(data, status, headers, config) {
                     success(data);
