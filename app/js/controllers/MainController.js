@@ -3,6 +3,8 @@
 adsApp.controller('adsMainController', function($scope, mainData) {
     mainData.getAllAds(function(resp) {
         $scope.data = resp;
+        $scope.totalItems = resp.numItems;
+        $scope.totalPages = resp.numPages;
     });
     mainData.getAllCategories(function(resp) {
         $scope.categories = resp;
@@ -10,4 +12,7 @@ adsApp.controller('adsMainController', function($scope, mainData) {
     mainData.getAllTowns(function(resp) {
         $scope.towns = resp;
     });
+
+    $scope.currentPage = 1;
+    $scope.pageSize = 10;
 });

@@ -5,7 +5,7 @@ adsApp.factory('mainData', function($http) {
         getAllAds: function(success) {
             $http({
                 method: 'GET',
-                url: 'http://localhost:1337/api/ads?PageSize=8&StartPage=1'
+                url: 'http://localhost:1337/api/ads'
             })
                 .success(function(data, status, headers, config) {
                     success(data);

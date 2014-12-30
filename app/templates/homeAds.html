@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-lg-9">
             <ul>
-                <li data-ng-repeat="ad in data.ads">
+                <!--<li data-ng-repeat="ad in data.ads">-->
+                <li dir-paginate="ad in data.ads | itemsPerPage: 8">
                     <div class="container well">
                         <div class="adsLiHeader">
                             <div class="col-lg-12">
@@ -35,16 +36,33 @@
             </ul>
         </div>
         <div class="col-lg-3 sideFilters">
-            <h3 class="titleFilters">Categories</h3>
-            <ul>
-                <li ng-repeat="category in categories">{{category.name}}</li>
-            </ul>
+            <div class="panel-heading">
+                <h3 class="titleFilters">Categories</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="category in categories">{{category.name}}</li>
+                </ul>
+            </div>
         </div>
         <div class="col-lg-3 sideFilters">
-            <h3 class="titleFilters">Towns</h3>
-            <ul>
-                <li ng-repeat="town in towns">{{town.name}}</li>
-            </ul>
+            <div class="panel-heading">
+                <h3 class="titleFilters">Towns</h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="town in towns">{{town.name}}</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
+<footer>
+    <div ng-controller="adsMainController">
+        <div class="text-center">
+            <dir-pagination-controls template-url='bower_components/angular-utils-pagination/dirPagination.tpl.html'>
+
+            </dir-pagination-controls>
+        </div>
+    </div>
+</footer>

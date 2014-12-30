@@ -1,6 +1,6 @@
 'use strict';
 
-var adsApp = angular.module('adsApp', ['ngRoute']);
+var adsApp = angular.module('adsApp', ['ngRoute', 'angularUtils.directives.dirPagination']);
 
 adsApp.config(['$routeProvider',
     function($routeProvider) {
@@ -22,3 +22,7 @@ adsApp.config(['$routeProvider',
           });
     }
 ]);
+
+adsApp.config(function(paginationTemplateProvider) {
+    paginationTemplateProvider.setPath('bower_components/angular-utils-pagination/dirPagination.tpl.html');
+});

@@ -39,6 +39,17 @@
             <!--<li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>-->
           </ul>
         </div>
+        <!--<div class="col-xs-4">-->
+          <!--<h3>Meals Page: {{ currentPage }}</h3>-->
+        <!--</div>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label for="search">Search:</label>-->
+          <!--<input ng-model="q" id="search" class="form-control" placeholder="Filter text">-->
+        <!--</div>-->
+        <!--<div class="col-xs-4">-->
+          <!--<label for="search">items per page:</label>-->
+          <!--<input type="number" min="1" max="100" class="form-control" ng-model="pageSize">-->
+        <!--</div>-->
       </div>
     </div>
   </header>
@@ -50,12 +61,18 @@
     </div>
   </main>
 
+
+
   <!-- Scripts and libraries loading section -->
   <script src="bower_components/angular/angular.js" type="text/javascript"></script>
   <script src="bower_components/angular-route/angular-route.js" type="text/javascript"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.js" type="text/javascript"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js" type="text/javascript"></script>
+  <script src="bower_components/angular-utils-pagination/dirPagination.js" type="text/javascript"></script>
   <script src="../node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
   <script src="app.js" type="text/javascript"></script>
   <script src="js/controllers/MainController.js" type="text/javascript"></script>
+  <!--<script src="js/controllers/PaginationController.js" type="text/javascript"></script>-->
   <script src="js/services/MainPage.js" type="text/javascript"></script>
 </body>
 </html>
