@@ -51,26 +51,29 @@
                 </li>
             </ul>
         </div>
-        <div class="col-lg-3 sideFilters">
-            <div class="panel-heading">
-                <h3 class="titleFilters">Categories</h3>
+        <div class="col-lg-3 pull-right">
+            <div class="sideFilters">
+                <div class="panel-heading">
+                    <h3 class="titleFilters">Categories</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li ng-repeat="category in categories">{{category.name}}</li>
+                    </ul>
+                </div>
             </div>
-            <div class="panel-body">
-                <ul>
-                    <li ng-repeat="category in categories">{{category.name}}</li>
-                </ul>
+            <div class="sideFilters">
+                <div class="panel-heading">
+                    <h3 class="titleFilters">Towns</h3>
+                </div>
+                <div class="panel-body">
+                    <ul>
+                        <li ng-repeat="town in towns">{{town.name}}</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="col-lg-3 sideFilters">
-            <div class="panel-heading">
-                <h3 class="titleFilters">Towns</h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                    <li ng-repeat="town in towns">{{town.name}}</li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 </div>
 <footer>
