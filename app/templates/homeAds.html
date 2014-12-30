@@ -1,9 +1,25 @@
 <div class="jumbotron">
     <div class="row">
+        <div class="container well adsFilters">
+            <div class="col-xs-2">
+                <span><strong>Current Page: </strong> {{ currentPage }}</span>
+            </div>
+            <div class="col-xs-2">
+                <span><strong>Total Ads: </strong> {{ totalItems }}</span>
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Search:</label>
+                <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+            </div>
+            <div class="col-xs-4">
+                <label for="search">Ads per page:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize">
+            </div>
+        </div>
         <div class="col-lg-9">
             <ul>
                 <!--<li data-ng-repeat="ad in data.ads">-->
-                <li dir-paginate="ad in data.ads | itemsPerPage: 8">
+                <li dir-paginate="ad in data.ads | filter:q | itemsPerPage: pageSize" current-page="currentPage">
                     <div class="container well">
                         <div class="adsLiHeader">
                             <div class="col-lg-12">
@@ -58,10 +74,10 @@
     </div>
 </div>
 <footer>
-    <div ng-controller="adsMainController">
+    <div>
         <div class="text-center">
-            <dir-pagination-controls template-url='bower_components/angular-utils-pagination/dirPagination.tpl.html'>
-
+            <dir-pagination-controls boundary-links="true"
+                                     template-url='bower_components/angular-utils-pagination/dirPagination.tpl.html'>
             </dir-pagination-controls>
         </div>
     </div>

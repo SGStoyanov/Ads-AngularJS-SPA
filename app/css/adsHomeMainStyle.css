@@ -4,14 +4,22 @@ main li {
     margin: 4%;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     color: black;
-    /*padding: 4%;*/
-    /*border: 1px solid #add8e6;*/
 }
 
     main li .container {
         background: #37A7E8;
         border-radius: 2%;
         box-shadow: 2px 2px 2px black;
+    }
+
+    .adsFilters, .adsFilters h4 {
+        background: #37A7E8;
+        color: white;
+    }
+
+    .adsFilters {
+        border-radius: 1%;
+        border: 2px solid lightgreen;
     }
 
     main .adsLiHeader {
