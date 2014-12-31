@@ -52,25 +52,41 @@
             </ul>
         </div>
         <div class="col-lg-3 pull-right">
-            <div class="sideFilters">
+            <div class="panel panel-primary sideFilters">
                 <div class="panel-heading">
-                    <h3 class="titleFilters">Categories</h3>
+                    <h3 class="panel-title titleFilters">Categories</h3>
                 </div>
                 <div class="panel-body">
                     <ul>
-                        <li ng-repeat="category in categories">
-                            <a class="categoryLabel" ng-click="filters.categoryId = category.id">{{category.name}}</a>
+                        <li ng-class="{ 'selectedSideFilter': $index == selectedIndex }" ng-click="itemClicked($index)">
+                            <a class="labelsAll" ng-click="filters.categoryId = ''">
+                                All
+                            </a>
+                        </li>
+                        <li ng-repeat="category in categories" ng-class="{ 'selectedSideFilter': $index == selectedIndex}"
+                                ng-click="itemClicked($index)">
+                            <a class="sideFilterLabels" ng-click="filters.categoryId = category.id">
+                                {{category.name}}
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="sideFilters">
+            <div class="panel panel-primary sideFilters">
                 <div class="panel-heading">
-                    <h3 class="titleFilters">Towns</h3>
+                    <h3 class="panel-title titleFilters">Towns</h3>
                 </div>
                 <div class="panel-body">
                     <ul>
-                        <li ng-repeat="town in towns">{{town.name}}</li>
+                        <li ng-class="{ 'selectedSideFilter': $index == selectedIndex }" ng-click="itemClicked($index)">
+                            <a class="labelsAll sideFilterLabels" ng-click="filters.townId = ''">All</a>
+                        </li>
+                        <li ng-repeat="town in towns" ng-class="{ 'selectedSideFilter': $index == selectedIndex }"
+                            ng-click="itemClicked($index)">
+                            <a class="townLabel sideFilterLabels" ng-click="filters.townId = town.id">
+                                {{town.name}}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -79,7 +95,7 @@
     </div>
 </div>
 
-<!--TODO: to investigate the behaviour of the pages-->
+<!--TODO: to investigate the behaviour of the paging-->
 <footer>
     <div class="text-center">
         <div class="col-md-8 col-md-offset-2">

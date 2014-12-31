@@ -1,10 +1,9 @@
 .sideFilters {
     border: 2px solid lightgreen;
     border-radius: 1%;
-    margin-top: 2.9%;
-    margin-bottom: 15%;
-    background: #37A7E8;
-    color: black;
+    margin-top: 12.9%;
+    /*background: #37A7E8;*/
+    /*color: black;*/
 }
 
     .titleFilters {
@@ -20,15 +19,30 @@
         margin: 0;
     }
 
-    .panel-body a {
-        text-transform: none;
-        color: black;
-        font-weight: bold;
+    .sideFilters .panel-body li {
+        padding: 5%;
     }
 
-    .panel-body a:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        color: lightgreen;
-        font-weight: bold;
-    }
+        .sideFilters .panel-body a {
+            text-transform: none;
+            color: black;
+            /*font-weight: bold;*/
+            font-size: 1.2em;
+        }
+
+        .sideFilters .panel-body a:hover {
+            cursor: pointer;
+        }
+
+        .sideFilters .panel-body .selectedSideFilter {
+            text-decoration: underline;
+            color: black;
+            font-weight: bold;
+            border: 1px solid lightgreen;
+            background: #DAA600;
+            width: 80%;
+        }
+
+        .sideFilters .labelsAll {
+            font-style: italic;
+        }

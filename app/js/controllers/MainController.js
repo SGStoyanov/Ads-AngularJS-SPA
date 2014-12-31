@@ -17,4 +17,9 @@ adsApp.controller('adsMainController', function($scope, mainData) {
     $scope.pageSize = 10;
 
     $scope.filters = {};
+
+    $scope.selectedIndex = -1;
+    $scope.itemClicked = function($index) {
+        $scope.selectedIndex = $index;
+    };
 });
