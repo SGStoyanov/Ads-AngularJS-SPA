@@ -19,7 +19,7 @@
         <div class="col-lg-9">
             <ul>
                 <!--<li data-ng-repeat="ad in data.ads">-->
-                <li dir-paginate="ad in data.ads | filter:q | itemsPerPage: pageSize" current-page="currentPage">
+                <li dir-paginate="ad in data.ads | filter:q | filter:filters | itemsPerPage: pageSize" current-page="currentPage">
                     <div class="container well">
                         <div class="adsLiHeader">
                             <div class="col-lg-12">
@@ -58,7 +58,9 @@
                 </div>
                 <div class="panel-body">
                     <ul>
-                        <li ng-repeat="category in categories">{{category.name}}</li>
+                        <li ng-repeat="category in categories">
+                            <a class="categoryLabel" ng-click="filters.categoryId = category.id">{{category.name}}</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -76,11 +78,13 @@
 
     </div>
 </div>
+
+<!--TODO: to investigate the behaviour of the pages-->
 <footer>
-    <div>
-        <div class="text-center">
-            <dir-pagination-controls boundary-links="true"
-                                     template-url='bower_components/angular-utils-pagination/dirPagination.tpl.html'>
+    <div class="text-center">
+        <div class="col-md-8 col-md-offset-2">
+            <dir-pagination-controls boundary-links="true" template-url='bower_components/angular-utils-pagination/dirPagination.tpl.html'>
+
             </dir-pagination-controls>
         </div>
     </div>

@@ -15,4 +15,6 @@ adsApp.controller('adsMainController', function($scope, mainData) {
 
     $scope.currentPage = 1;
     $scope.pageSize = 10;
+
+    $scope.filters = {};
 });
