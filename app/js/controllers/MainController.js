@@ -1,6 +1,7 @@
 'use strict';
 
 adsApp.controller('adsMainController', function($scope, mainData) {
+
     mainData.getAllAds(function(resp) {
         $scope.data = resp;
         $scope.totalItems = resp.numItems;
@@ -15,11 +16,13 @@ adsApp.controller('adsMainController', function($scope, mainData) {
 
     $scope.currentPage = 1;
     $scope.pageSize = 10;
-
     $scope.filters = {};
-
     $scope.selectedIndex = -1;
     $scope.itemClicked = function($index) {
         $scope.selectedIndex = $index;
     };
+
+    function registerEventHandlers() {
+
+    }
 });

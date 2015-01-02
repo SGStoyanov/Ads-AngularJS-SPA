@@ -1,6 +1,14 @@
 'use strict';
 
 adsApp.factory('mainData', function($http) {
+    //var resource = $resource(
+    //    'http://localhost:1337/api/user/ads/:id',
+    //    {id: '@id'},
+    //    { update: {
+    //        method: 'PUT'
+    //    }}
+    //);
+
     return {
         getAllAds: function(success) {
             $http({
@@ -37,6 +45,15 @@ adsApp.factory('mainData', function($http) {
                 .error(function(data, status, headers, config) {
                     $log.warn(data);
                 })
+        },
+
+        showInfoMessage: function(msg, msgType) {
+            noty({
+                text: msg,
+                type: msgType,
+                layout: "topCenter",
+                timeout: 3000
+            })
         }
     }
 });
