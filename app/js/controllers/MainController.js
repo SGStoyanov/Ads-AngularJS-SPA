@@ -21,8 +21,4 @@ adsApp.controller('adsMainController', function($scope, mainData) {
     $scope.itemClicked = function($index) {
         $scope.selectedIndex = $index;
     };
-
-    function registerEventHandlers() {
-
-    }
 });
