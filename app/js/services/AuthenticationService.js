@@ -1,7 +1,7 @@
 'use strict';
 
-adsApp.factory('AuthenticationService', ['$http', '$q',
- function ($http, $q) {
+adsApp.factory('AuthenticationService', ['$http', '$q', '$location','$cookies',
+ function ($http, $q, $location, $cookies) {
 
      var hostUrl = 'http://localhost:1337/api';
 
@@ -18,8 +18,27 @@ adsApp.factory('AuthenticationService', ['$http', '$q',
          return l.promise;
      }
 
+     function isLoggedIn() {
+         return !!$cookies.FPSSO; //convert value to bool
+     }
+
+     //function saveAttemptUrl() {
+     //    if($location.path().toLowerCase() != '/login' || $location.path().toLowerCase() != '/register') {
+     //        redirectToUrlAfterLogin.url = $location.path();
+     //    } else {
+     //        redirectToUrlAfterLogin.url = '/home';
+     //    }
+     //}
+
+     function redirectToHome() {
+        $location.path('/home');
+     }
+
      return {
-         login: login//,
+         login: login,
+         isLoggedIn: isLoggedIn,
+         //saveAttemptedUrl: saveAttemptUrl,
+         redirectToHome: redirectToHome
          //register: register
          //logout: logout
      }

@@ -2,6 +2,9 @@
 
 var adsApp = angular.module('adsApp', ['ngRoute', 'ngCookies', 'ngResource', 'ui.bootstrap' , 'angularUtils.directives.dirPagination']);
 
+//where we will store the attempted url
+//adsApp.value('redirectToUrlAfterLogin', { url: '/' });
+
 adsApp
     .config(['$routeProvider',
     function($routeProvider) {
@@ -32,12 +35,40 @@ adsApp
             redirectTo: '/home'
           });
     }
-])
+]);
 
-    .run(function($rootScope, $location) {
-        $rootScope.$on('$rootChangeError', function(event, current, previous, rejection) {
-            $location.path('/unauthorized');
-        });
+    //.run(function($rootScope, $location) {
+    //    $rootScope.$on('$rootChangeError', function(event, current, previous, rejection) {
+    //        $location.path('/unauthorized');
+    //    });
+    //});
+
+    //.run(function ($location, AuthenticationService) {
+    //    if (!AuthenticationService.isLoggedIn()) {
+    //        //AuthenticationService.saveAttemptedUrl();
+    //        $location.path('/login');
+    //    } else {
+    //        $location.path('/home');
+    //    }
+    //});
+
+adsApp.config(function($httpProvider) {
+    $httpProvider.interceptors.push('securityInterceptor');
+})
+    .provider('securityInterceptor', function() {
+        this.$get = function($location, $q, $injector, $cookies) {
+            return function(promise) {
+                var appAuth = $injector.get('AuthenticationService');
+                return promise.then(null, function(response) {
+                    if (response.status === 401) {
+                        delete $cookies.FPSSO;
+                        //appAuth.saveAttemptedUrl();
+                        $location.path('/login');
+                    }
+                    return $q.reject(response);
+                });
+            }
+        };
     });
 
 adsApp.config(function(paginationTemplateProvider) {
