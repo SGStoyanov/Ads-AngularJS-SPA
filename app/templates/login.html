@@ -1,8 +1,11 @@
 <div class="well bs-component">
     <form class="form-horizontal" name="loginForm" novalidate role="form">
+        <div class="alert-success loginSuccessNotification hide">
+            <alert type="'success'">Login successful!</alert>
+        </div>
         <fieldset>
             <legend>Login Form</legend>
-            <div class="form-group" ng-class="{'has-error' : loginForm.username.$invalid && loginForm.username.$touched}">
+            <div class="form-group" show-errors>
                 <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
                 <div class="col-sm-4">
                     <input type="text" name="username" class="form-control" id="inputUsername"
@@ -10,45 +13,56 @@
                            autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
                            background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"
                            required
+                           ng-required="true"
                            ng-model="credentials.username"
                            ng-pattern="/^([\w.])+$/"
                            ng-minlength="3"
                            ng-maxlength="30"
                     />
-                    <span class="help-block" ng-show="loginForm.username.$error.required && loginForm.username.$dirty">
+                    <span class="help-block" ng-if="loginForm.username.$error.required">
                         Username is required!
                     </span>
-                    <span class="help-block" ng-show="loginForm.username.$error.pattern && loginForm.username.$dirty">
+                    <span class="help-block" ng-if="loginForm.username.$error.pattern && loginForm.username.$touched">
                         Allowed chars: small or capital letters, digits _ and .
+                    </span>
+                    <span class="help-block"
+                          ng-if="loginForm.username.$error.minlength || loginForm.username.$error.maxlength
+                          && loginForm.username.$touched">
+                        Username must be between 3 and 30 characters!
                     </span>
                 </div>
             </div>
-            <div class="form-group" ng-class="{'has-error' : loginForm.password.$invalid && loginForm.password.$touched}">
+            <div class="form-group" show-errors>
                 <label for="inputPassword" class="col-sm-2 control-label">Password:</label>
                 <div class="col-sm-4">
                     <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Your password..."
                            autocomplete="off" style="cursor: auto; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsPDhss3LcOZQAAAU5JREFUOMvdkzFLA0EQhd/bO7iIYmklaCUopLAQA6KNaawt9BeIgnUwLHPJRchfEBR7CyGWgiDY2SlIQBT/gDaCoGDudiy8SLwkBiwz1c7y+GZ25i0wnFEqlSZFZKGdi8iiiOR7aU32QkR2c7ncPcljAARAkgckb8IwrGf1fg/oJ8lRAHkR2VDVmOQ8AKjqY1bMHgCGYXhFchnAg6omJGcBXEZRtNoXYK2dMsaMt1qtD9/3p40x5yS9tHICYF1Vn0mOxXH8Uq/Xb389wff9PQDbQRB0t/QNOiPZ1h4B2MoO0fxnYz8dOOcOVbWhqq8kJzzPa3RAXZIkawCenHMjJN/+GiIqlcoFgKKq3pEMAMwAuCa5VK1W3SAfbAIopum+cy5KzwXn3M5AI6XVYlVt1mq1U8/zTlS1CeC9j2+6o1wuz1lrVzpWXLDWTg3pz/0CQnd2Jos49xUAAAAASUVORK5CYII=);
                            background-attachment: scroll; background-position: 100% 50%; background-repeat: no-repeat;"
-                           required
+                           ng-required="true"
                            ng-model="credentials.password"
                            ng-pattern="/^([\w.])+$/"
                            ng-minlength="3"
                            ng-maxlength="30"
                     />
-                     <span class="help-block" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">
+                    <span class="help-block" ng-if="loginForm.password.$error.required">
                         Password is required!
+                    </span>
+                    <span class="help-block" ng-if="loginForm.password.$error.pattern && loginForm.password.$touched">
+                        Allowed chars: small or capital letters, digits _ and .
+                    </span>
+                    <span class="help-block"
+                          ng-if="loginForm.password.$error.minlength || loginForm.password.$error.maxlength
+                          && loginForm.password.$touched">
+                        Password must be between 3 and 30 characters!
                     </span>
                 </div>
             </div>
             <div class="form-actions">
                 <div class="col-sm-10 col-sm-offset-2">
-                    <button type="submit" class="btn btn-primary" id="btn-LoginViewLogin"
-                            ng-click="login(credentials)"
-                            data-ng-disabled="(loginForm.$invalid && loginForm.$touched) || loginForm.username.$error.pattern || dataLoading"
-                    >
+                    <button type="submit" name="loginSubmitButton" class="btn btn-primary" id="btn-LoginViewLogin"
+                            data-ng-model="loginSubmitButton" ng-click="login(credentials)">
                         Login
                     </button>
-                    <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
                     <button class="btn btn-default" id="btn-LoginViewCancel">
                         Cancel
                     </button>

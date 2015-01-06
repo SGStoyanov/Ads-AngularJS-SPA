@@ -9,6 +9,12 @@ adsApp.controller('LoginController', function ($scope, $location, Authentication
     }
 
     $scope.login = function(credentials) {
+        $scope.$broadcast('show-errors-event');
+
+        if($scope.loginForm.$invalid) {
+            return;
+        }
+
         if(credentials) {
             AuthenticationService.login(credentials)
                 .then(
@@ -17,6 +23,7 @@ adsApp.controller('LoginController', function ($scope, $location, Authentication
                     accessToken = loginSuccessData.access_token;
                     AuthenticationService.redirectToHome();
                     //console.log(accessToken);
+                    $scope.$broadcast('show-login-success');
                 },
                 function error(loginErrorData) {
                     console.dir(loginErrorData);
