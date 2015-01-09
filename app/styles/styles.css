@@ -1,3 +1,19 @@
+#wrapper {
+    margin-top: 5%;
+}
+
 footer p, header h1 {
     text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.publicAdsContainer ul li div {
+    width: 90%;
+}
+
+#categoriesFilter, #townsFilter, #leftSidebar {
+    width: 75%;
 }

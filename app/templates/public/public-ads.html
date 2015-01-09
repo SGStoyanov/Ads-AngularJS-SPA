@@ -1,7 +1,9 @@
 <div id="public-ads">
     <ul>
-        <li data-ng-repeat="ad in ads">
-            {{$scope.ads}}
+        <li data-ng-repeat="ad in adsData.ads">
+            <div class="container well">
+                {{ ad.title }}
+            </div>
         </li>
     </ul>
 </div>
