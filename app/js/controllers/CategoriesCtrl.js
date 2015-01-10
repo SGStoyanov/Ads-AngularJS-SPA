@@ -12,5 +12,10 @@ adsApp.controller('CategoriesCtrl', ['$scope', '$rootScope','categoriesData', 'f
     $scope.categoryClicked = function categoryClicked(category) {
         filter.filterByCategory(category);
         $rootScope.$broadcast('categoryClicked', category);
-    }
+    };
+
+    $scope.clearCategoryFilter = function() {
+        filter.clearCategoryFilter();
+        $rootScope.$broadcast('clearCategoryFilter');
+    };
 }]);

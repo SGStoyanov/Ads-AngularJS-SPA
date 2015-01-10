@@ -1,6 +1,8 @@
 'use strict';
 
-adsApp.controller('RegisterCtrl', ['$scope', 'townsData', 'userData', function($scope, townsData, userData) {
+adsApp.controller('RegisterCtrl', ['$scope', '$location','townsData', 'userData', function($scope, $location,townsData, userData) {
+    $scope.pageTitle = 'Register';
+
     townsData.getTowns()
         .$promise
         .then(function (data) {

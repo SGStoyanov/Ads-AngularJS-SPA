@@ -10,5 +10,10 @@ adsApp.controller('TownsCtrl', ['$scope', '$rootScope', 'townsData', 'filter', f
     $scope.townClicked = function townClicked(town) {
         filter.filterByTown(town);
         $rootScope.$broadcast('townClicked', town);
-    }
+    };
+
+    $scope.clearTownFilter = function() {
+        filter.clearTownFilter();
+        $rootScope.$broadcast('clearTownFilter');
+    };
 }]);

@@ -2,6 +2,7 @@
     <h4>Towns</h4>
     <!--<img src="imgs/loading2.gif" alt="Loading Towns" data-ng-hide="ready" />-->
     <ul data-ng-cloak>
+        <li><a href="#/" data-ng-click="clearTownFilter()">All</a></li>
         <li data-ng-repeat="town in townsData">
             <a href="#/" data-ng-click="townClicked(town)">{{ town.name }}</a>
         </li>

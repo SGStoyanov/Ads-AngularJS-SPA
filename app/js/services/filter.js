@@ -13,9 +13,19 @@ adsApp.factory('filter', function() {
         return filterParams;
     }
 
+    function clearCategoryFilter() {
+        filterParams.categoryId = '';
+    }
+
+    function clearTownFilter() {
+        filterParams.townId = '';
+    }
+
     return {
         filterByCategory: filterByCategory,
         filterByTown: filterByTown,
-        getFilters: getFilterParams
+        getFilters: getFilterParams,
+        clearCategoryFilter: clearCategoryFilter,
+        clearTownFilter: clearTownFilter
     }
 });

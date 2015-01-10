@@ -23,4 +23,12 @@ adsApp.controller('PublicAdsCtrl', ['$scope', 'adsData', 'filter', function($sco
     $scope.$on('categoryClicked', function () {
         loadPublicAds(filter.getFilters());
     });
+
+    $scope.$on('clearCategoryFilter', function () {
+        loadPublicAds(filter.getFilters());
+    });
+
+    $scope.$on('clearTownFilter', function () {
+        loadPublicAds(filter.getFilters());
+    });
 }]);

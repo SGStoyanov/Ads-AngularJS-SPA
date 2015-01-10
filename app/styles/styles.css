@@ -24,3 +24,6 @@ ul {
     margin-left: 34%;
     margin-right: auto;
 }
+
+/*Pagination styling*/
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }

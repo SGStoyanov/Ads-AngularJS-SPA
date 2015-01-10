@@ -3,6 +3,7 @@
 var adsApp = angular.module('adsApp', ['ngRoute', 'ngResource', 'ui.bootstrap']);
 
 adsApp.constant('baseServiceUrl', 'http://localhost:1337/api/');
+adsApp.constant('pageSize', 2);
 
 adsApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider

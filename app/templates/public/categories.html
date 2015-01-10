@@ -2,6 +2,7 @@
     <h4>Categories</h4>
     <!--<img src="imgs/loading2.gif" alt="Loading Categories" data-ng-hide="ready" />-->
     <ul data-ng-cloak>
+        <li><a href="#/" data-ng-click="clearCategoryFilter()">All</a></li>
         <li data-ng-repeat="category in categoriesData">
             <a href="#/" data-ng-click="categoryClicked(category)">{{ category.name }}</a>
         </li>
