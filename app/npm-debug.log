@@ -2,12 +2,12 @@
 1 verbose cli [ 'C:\\Program Files\\nodejs\\\\node.exe',
 1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
 1 verbose cli   'install',
-1 verbose cli   'angular-noty' ]
+1 verbose cli   'angular-bootstrap' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.35
 4 verbose node symlink C:\Program Files\nodejs\\node.exe
-5 verbose cache add [ 'angular-noty', null ]
-6 verbose cache add name=undefined spec="angular-noty" args=["angular-noty",null]
+5 verbose cache add [ 'angular-bootstrap', null ]
+6 verbose cache add name=undefined spec="angular-bootstrap" args=["angular-bootstrap",null]
 7 verbose parsed url { protocol: null,
 7 verbose parsed url   slashes: null,
 7 verbose parsed url   auth: null,
@@ -17,68 +17,57 @@
 7 verbose parsed url   hash: null,
 7 verbose parsed url   search: null,
 7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'angular-noty',
-7 verbose parsed url   path: 'angular-noty',
-7 verbose parsed url   href: 'angular-noty' }
-8 silly lockFile 73d9a7f6-angular-noty angular-noty
-9 verbose lock angular-noty C:\Users\adm-bgsstnv\AppData\Roaming\npm-cache\73d9a7f6-angular-noty.lock
-10 silly lockFile 73d9a7f6-angular-noty angular-noty
-11 silly lockFile 73d9a7f6-angular-noty angular-noty
-12 verbose addNamed [ 'angular-noty', '' ]
+7 verbose parsed url   pathname: 'angular-bootstrap',
+7 verbose parsed url   path: 'angular-bootstrap',
+7 verbose parsed url   href: 'angular-bootstrap' }
+8 silly lockFile 75c42a0c-angular-bootstrap angular-bootstrap
+9 verbose lock angular-bootstrap C:\Users\adm-bgsstnv\AppData\Roaming\npm-cache\75c42a0c-angular-bootstrap.lock
+10 silly lockFile 75c42a0c-angular-bootstrap angular-bootstrap
+11 silly lockFile 75c42a0c-angular-bootstrap angular-bootstrap
+12 verbose addNamed [ 'angular-bootstrap', '' ]
 13 verbose addNamed [ null, '*' ]
-14 silly lockFile c99557e7-angular-noty angular-noty@
-15 verbose lock angular-noty@ C:\Users\adm-bgsstnv\AppData\Roaming\npm-cache\c99557e7-angular-noty.lock
-16 silly addNameRange { name: 'angular-noty', range: '*', hasData: false }
-17 verbose request where is /angular-noty
+14 silly lockFile eebb98d0-angular-bootstrap angular-bootstrap@
+15 verbose lock angular-bootstrap@ C:\Users\adm-bgsstnv\AppData\Roaming\npm-cache\eebb98d0-angular-bootstrap.lock
+16 silly addNameRange { name: 'angular-bootstrap', range: '*', hasData: false }
+17 verbose request where is /angular-bootstrap
 18 verbose request registry https://registry.npmjs.org/
-19 verbose request id 5fb9a8f68cfe67c1
-20 verbose url raw /angular-noty
-21 verbose url resolving [ 'https://registry.npmjs.org/', './angular-noty' ]
-22 verbose url resolved https://registry.npmjs.org/angular-noty
-23 verbose request where is https://registry.npmjs.org/angular-noty
-24 info trying registry request attempt 1 at 12:17:12
-25 http GET https://registry.npmjs.org/angular-noty
-26 http 404 https://registry.npmjs.org/angular-noty
-27 verbose headers { date: 'Thu, 08 Jan 2015 10:17:13 GMT',
-27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-27 verbose headers   'content-type': 'application/json',
-27 verbose headers   'cache-control': 'max-age=0',
-27 verbose headers   'content-length': '52',
-27 verbose headers   'accept-ranges': 'bytes',
-27 verbose headers   via: '1.1 varnish',
-27 verbose headers   age: '0',
-27 verbose headers   'x-served-by': 'cache-lcy1123-LCY',
-27 verbose headers   'x-cache': 'MISS',
-27 verbose headers   'x-cache-hits': '0',
-27 verbose headers   'x-timer': 'S1420712233.159661,VS0,VE85',
-27 verbose headers   'keep-alive': 'timeout=10, max=50',
-27 verbose headers   connection: 'Keep-Alive' }
+19 verbose request id 765c6812c2a3d64e
+20 verbose url raw /angular-bootstrap
+21 verbose url resolving [ 'https://registry.npmjs.org/', './angular-bootstrap' ]
+22 verbose url resolved https://registry.npmjs.org/angular-bootstrap
+23 verbose request where is https://registry.npmjs.org/angular-bootstrap
+24 info trying registry request attempt 1 at 11:46:22
+25 verbose etag "75A5CM87ZDKXM40LKQ87286R9"
+26 http GET https://registry.npmjs.org/angular-bootstrap
+27 http 404 https://registry.npmjs.org/angular-bootstrap
 28 silly registry.get cb [ 404,
-28 silly registry.get   { date: 'Thu, 08 Jan 2015 10:17:13 GMT',
+28 silly registry.get   { date: 'Sat, 10 Jan 2015 09:46:24 GMT',
 28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     etag: '"75A5CM87ZDKXM40LKQ87286R9"',
 28 silly registry.get     'content-type': 'application/json',
 28 silly registry.get     'cache-control': 'max-age=0',
-28 silly registry.get     'content-length': '52',
+28 silly registry.get     'content-length': '715',
 28 silly registry.get     'accept-ranges': 'bytes',
 28 silly registry.get     via: '1.1 varnish',
 28 silly registry.get     age: '0',
-28 silly registry.get     'x-served-by': 'cache-lcy1123-LCY',
+28 silly registry.get     'x-served-by': 'cache-lhr6331-LHR',
 28 silly registry.get     'x-cache': 'MISS',
 28 silly registry.get     'x-cache-hits': '0',
-28 silly registry.get     'x-timer': 'S1420712233.159661,VS0,VE85',
+28 silly registry.get     'x-timer': 'S1420883183.571861,VS0,VE636',
+28 silly registry.get     vary: 'Accept',
 28 silly registry.get     'keep-alive': 'timeout=10, max=50',
 28 silly registry.get     connection: 'Keep-Alive' } ]
-29 silly lockFile c99557e7-angular-noty angular-noty@
-30 silly lockFile c99557e7-angular-noty angular-noty@
-31 error 404 404 Not Found: angular-noty
+29 silly lockFile eebb98d0-angular-bootstrap angular-bootstrap@
+30 silly lockFile eebb98d0-angular-bootstrap angular-bootstrap@
+31 error 404 Not Found
 31 error 404
-31 error 404 'angular-noty' is not in the npm registry.
+31 error 404 'angular-bootstrap' is not in the npm registry.
 31 error 404 You should bug the author to publish it
 31 error 404
 31 error 404 Note that you can also install from a
 31 error 404 tarball, folder, or http url, or git url.
 32 error System Windows_NT 6.1.7601
-33 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-noty"
+33 error command "C:\\Program Files\\nodejs\\\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-bootstrap"
 34 error cwd C:\Program Files (x86)\Xampp\htdocs
 35 error node -v v0.10.35
 36 error npm -v 1.4.28

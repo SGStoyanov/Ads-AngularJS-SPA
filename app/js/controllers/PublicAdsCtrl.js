@@ -1,11 +1,26 @@
 'use strict';
 
-adsApp.controller('PublicAdsCtrl', ['$scope', 'adsData', function($scope, adsData) {
+adsApp.controller('PublicAdsCtrl', ['$scope', 'adsData', 'filter', function($scope, adsData, filter) {
     $scope.ready = false;
 
-    adsData.getPublicAds().$promise
-        .then(function (data) {
-            $scope.adsData = data;
-            $scope.ready = true;
-        });
+    function loadPublicAds(filterParams) {
+        filterParams = filterParams || {};
+
+        adsData.getPublicAds(filterParams)
+            .$promise
+            .then(function (data) {
+                $scope.adsData = data;
+                $scope.ready = true;
+            });
+    }
+
+    loadPublicAds();
+
+    $scope.$on('townClicked', function () {
+        loadPublicAds(filter.getFilters());
+    });
+
+    $scope.$on('categoryClicked', function () {
+        loadPublicAds(filter.getFilters());
+    });
 }]);

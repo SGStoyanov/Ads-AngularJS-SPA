@@ -1,8 +1,9 @@
 <div class="container well" id="townsFilter">
-    <img src="imgs/loading2.gif" alt="Loading Towns" data-ng-hide="ready" />
+    <h4>Towns</h4>
+    <!--<img src="imgs/loading2.gif" alt="Loading Towns" data-ng-hide="ready" />-->
     <ul data-ng-cloak>
         <li data-ng-repeat="town in townsData">
-            <span>{{ town.name }}</span>
+            <a href="#/" data-ng-click="townClicked(town)">{{ town.name }}</a>
         </li>
     </ul>
 </div>
