@@ -1,0 +1,18 @@
+<header>
+    <h1>Ads - {{pageTitle}}</h1>
+</header>
+<div id="wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            <left-public-sidebar data-ng-if="!isLoggedIn"></left-public-sidebar>
+            <logged-in-sidebar data-ng-if="isLoggedIn"></logged-in-sidebar>
+        </div>
+        <div class="col-md-6 publicAdsContainer">
+            <public-ads></public-ads>
+        </div>
+        <div class="col-md-3 filtersContainer">
+            <categories></categories>
+            <towns></towns>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,13 @@ ul {
     width: 90%;
 }
 
-#categoriesFilter, #townsFilter, #leftSidebar {
+#categoriesFilter, #townsFilter, #leftSidebar, #loggedInSidebar {
     width: 75%;
+}
+
+.loadingImage {
+    width: 30%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 }

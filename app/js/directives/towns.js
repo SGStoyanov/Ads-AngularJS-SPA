@@ -3,6 +3,6 @@ adsApp.directive('towns', function() {
         controller: 'TownsCtrl',
         restrict: 'E',
         templateUrl: 'templates/public/towns.html',
-        replace: false
+        replace: true
     }
 });

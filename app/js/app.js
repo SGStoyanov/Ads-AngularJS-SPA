@@ -7,15 +7,15 @@ adsApp.constant('baseServiceUrl', 'http://localhost:1337/api/');
 adsApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: '../templates/home.html',
+            templateUrl: '../templates/public/home.html',
             controller: 'HomeCtrl'
         })
         .when('/login', {
-            templateUrl: '../templates/login.html',
+            templateUrl: '../templates/public/login.html',
             controller: 'LoginCtrl'
         })
         .when('/register', {
-            templateUrl: '../templates/register.html',
+            templateUrl: '../templates/public/register.html',
             controller: 'RegisterCtrl'
         })
         .otherwise({

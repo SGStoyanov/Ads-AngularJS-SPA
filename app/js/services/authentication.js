@@ -4,13 +4,11 @@ adsApp.factory('authentication',  function() {
     var key = 'user';
 
     function saveUserData (data) {
-        //localStorageServiceProvider.set(key, data);
         localStorage.setItem(key, angular.toJson(data));
     }
 
     function getUserData() {
-        //localStorageServiceProvider.get(key);
-        localStorage.getItem(key);
+        return angular.fromJson(localStorage.getItem(key));
     }
 
     function getHeaders(argument) {
@@ -18,7 +16,7 @@ adsApp.factory('authentication',  function() {
         var userData = getUserData();
 
         if (userData) {
-            headers.Authorization = 'Bearer ' + getUserData().user.access_token;
+            headers.Authorization = 'Bearer ' + getUserData().access_token;
         }
 
         return headers;
@@ -28,9 +26,13 @@ adsApp.factory('authentication',  function() {
         localStorage.removeItem(key);
     }
 
-    function isAdmin(user) {
+    function isAdmin() {
         var isAdmin = getUserData().isAdmin;
         return isAdmin;
+    }
+
+    function isLoggedIn() {
+        return !!getUserData();
     }
 
     return {
@@ -38,6 +40,7 @@ adsApp.factory('authentication',  function() {
         getUser: getUserData,
         getHeaders: getHeaders,
         removeUser: removeUser,
-        isAdmin: isAdmin
+        isAdmin: isAdmin,
+        isLoggedIn: isLoggedIn
     }
 });

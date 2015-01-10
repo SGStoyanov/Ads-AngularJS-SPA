@@ -1,5 +1,6 @@
 <div id="public-ads">
-    <ul>
+    <img src="imgs/loading2.gif" alt="Still loading..." data-ng-hide="ready" class="loadingImage"/>
+    <ul data-ng-cloak>
         <li data-ng-repeat="ad in adsData.ads">
             <div class="container well">
                 {{ ad.title }}

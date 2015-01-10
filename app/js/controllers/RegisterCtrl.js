@@ -11,5 +11,9 @@ adsApp.controller('RegisterCtrl', ['$scope', 'townsData', 'userData', function($
     $scope.register = function (user) {
         //console.log(user);
         userData.register(user);
-    }
+    };
+
+    $scope.returnToHome = function() {
+        $location.path('/');
+    };
 }]);
