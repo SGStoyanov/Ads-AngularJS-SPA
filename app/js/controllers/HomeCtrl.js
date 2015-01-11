@@ -1,9 +1,15 @@
 'use strict';
 
-adsApp.controller('HomeCtrl', ['$scope', 'adsData', 'authentication', 'notificationService', 'pageSize',
-    function($scope, adsData, authentication, notificationService, pageSize) {
+adsApp.controller('HomeCtrl', ['$scope', 'adsData', 'authService', 'notificationService', 'pageSize',
+    function($scope, adsData, authService, notificationService, pageSize) {
         $scope.pageTitle = 'Home';
-        $scope.isLoggedIn = authentication.isLoggedIn();
+        $scope.isLoggedIn = authService.isLoggedIn();
+        //console.log(authService.isLoggedIn());
+
+        //console.log(userData.getCurrentUser());
+        //if (userData.getCurrentUser()) {
+        //    $scope.currentUser = userData.getCurrentUser();
+        //}
 
         $scope.adsParams = {
             'startPage' : 1,
@@ -23,5 +29,10 @@ adsApp.controller('HomeCtrl', ['$scope', 'adsData', 'authentication', 'notificat
         };
 
         $scope.reloadAds();
+
+        $scope.authService = authService;
+        $scope.logout = function() {
+            authService.logout();
+        }
     }
 ]);
