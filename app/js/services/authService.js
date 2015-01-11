@@ -1,59 +1,5 @@
 'use strict';
 
-//adsApp.factory('authentication',  function() {
-//    var key = 'currentUser';
-//
-//    function saveUserData (data) {
-//        localStorage.setItem(key, angular.toJson(data));
-//    }
-//
-//    function getUserData() {
-//        return angular.fromJson(localStorage.getItem(key));
-//    }
-//
-//    function getHeaders(argument) {
-//        var headers = {};
-//        var userData = getUserData();
-//
-//        if (userData) {
-//            headers.Authorization = 'Bearer ' + getUserData().access_token;
-//        }
-//
-//        return headers;
-//    }
-//
-//    function removeUser() {
-//        localStorage.removeItem(key);
-//    }
-//
-//    function isAdmin() {
-//        var isAdmin = getUserData().isAdmin;
-//        return isAdmin;
-//    }
-//
-//    function isLoggedIn() {
-//        return !!getUserData();
-//    }
-//
-//    function getCurrentUser() {
-//        var userObject = sessionStorage['currentUser'];
-//        if (userObject) {
-//            return JSON.parse(sessionStorage['currentUser']);
-//        }
-//    }
-//
-//
-//    return {
-//        saveUser: saveUserData,
-//        getUser: getUserData,
-//        getHeaders: getHeaders,
-//        removeUser: removeUser,
-//        isAdmin: isAdmin,
-//        isLoggedIn: isLoggedIn,
-//        getCurrentUser: getCurrentUser
-//    }
-//});
-
 adsApp.factory('authService',
     function ($http, baseServiceUrl) {
         return {
@@ -64,7 +10,7 @@ adsApp.factory('authService',
                     data: userData
                 };
                 $http(request).success(function(data) {
-                    sessionStorage['currentUser'] = JSON.stringify(data);
+                    localStorage['currentUser'] = JSON.stringify(data);
                     success(data);
                 }).error(error);
             },
@@ -76,28 +22,28 @@ adsApp.factory('authService',
                     data: userData
                 };
                 $http(request).success(function(data) {
-                    sessionStorage['currentUser'] = JSON.stringify(data);
+                    localStorage['currentUser'] = JSON.stringify(data);
                     success(data);
                 }).error(error);
             },
 
             logout: function() {
-                delete sessionStorage['currentUser'];
+                delete localStorage['currentUser'];
             },
 
             getCurrentUser : function() {
-                var userObject = sessionStorage['currentUser'];
+                var userObject = localStorage['currentUser'];
                 if (userObject) {
-                    return JSON.parse(sessionStorage['currentUser']);
+                    return JSON.parse(localStorage['currentUser']);
                 }
             },
 
             isAnonymous : function() {
-                return sessionStorage['currentUser'] == undefined;
+                return localStorage['currentUser'] == undefined;
             },
 
             isLoggedIn : function() {
-                return !!sessionStorage['currentUser'];
+                return !!localStorage['currentUser'];
             },
 
             isNormalUser : function() {

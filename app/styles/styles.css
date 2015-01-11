@@ -1,5 +1,6 @@
 #wrapper {
     margin-top: 5%;
+    width: 99%;
 }
 
 footer p, header h1 {
@@ -25,5 +26,72 @@ ul {
     margin-right: auto;
 }
 
+#loggedInSidebar {
+    margin-left: 23%;
+}
+
 /*Pagination styling*/
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+/*main li {*/
+    /*list-style-type: none;*/
+    /*color: black;*/
+    /*margin: 4%;*/
+    /*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+    /*color: black;*/
+/*}*/
+
+/*main li .container {*/
+    /*background: #37A7E8;*/
+    /*border-radius: 2%;*/
+    /*box-shadow: 2px 2px 2px black;*/
+/*}*/
+
+/*main .adsLiHeader {*/
+    /*margin-bottom: 7%;*/
+/*}*/
+
+/*main .adsLiHeader .titleDiv {*/
+    /*font-weight: bolder;*/
+    /*font-size: 1.4em;*/
+/*}*/
+
+/*.titleDiv {*/
+    /*padding: 0;*/
+    /*margin: 0;*/
+    /*color: black;*/
+/*}*/
+
+/*.photo, .textDiv, .adsTextRight {*/
+    /*border: 2px dotted #add8e6;*/
+/*}*/
+
+/*.photo {*/
+    /*max-width: 150px;*/
+    /*max-height: 120px;*/
+/*}*/
+
+/*.textDiv {*/
+    /*font-size: 0.9em;*/
+    /*padding: 1%;*/
+    /*background: #a6d8f4;*/
+    /*overflow: hidden;*/
+/*}*/
+
+/*.adsTextRight {*/
+    /*margin-left: 3.2%*/
+/*margin-right: 0;*/
+    /*margin-top: 4%;*/
+    /*margin-bottom: 0;*/
+    /*padding: 0;*/
+    /*padding-left: 2%;*/
+    /*background: #a6d8f4;*/
+/*}*/
+
+/*.adsLabelTextRight {*/
+    /*margin-top: 4%;*/
+    /*margin-bottom: 0;*/
+    /*margin-left: 0;*/
+    /*padding: 0;*/
+/*}*/
